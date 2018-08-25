@@ -1,0 +1,25 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "express, websocket and oauth\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dmaybe oauth project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ma273567/nodejs.git"
+  },
+  "author": "reza azmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ma273567/nodejs/issues"
+  },
+  "homepage": "https://github.com/ma273567/nodejs#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.1.1",
+    "webcam": "^3.1.1"
+  }
+}
