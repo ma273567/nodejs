@@ -1,9 +1,9 @@
 /*
-    This is a Nodejs project that express and websocket APIs to  try to 'clone' groupme, with a video call 
-    functionality. 
+    This is a Nodejs project that uses express and websocket APIs
 */
 
 const express = require('express');
 const app = express();
 const socket = require('socket.io');
+
 
