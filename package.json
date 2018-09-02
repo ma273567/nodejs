@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ma273567/nodejs#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "socket.io": "^2.1.1",
     "webcam": "^3.1.1"
