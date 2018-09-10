@@ -1,3 +1,24 @@
-* {
-    background-color: aliceblue;
+html, body {
+    background-color: gainsboro;
+    padding-top: 50px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-color: coral;
+}
+
+.my-card {
+  /*  margin: 1rem;
+  width: 12em;
+  
+  
+  border: 1px solid aliceblue; */
+    background-color: white;
+    max-height: 32rem;
+    min-height: 32rem;
+  display: flex; 
+  flex-direction: column;
+  overflow-y: scroll;
 }
