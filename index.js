@@ -6,37 +6,33 @@
 console.log('running websocket');
 // end test
 
-const bodyParser = require('body-parser');
-const socket = require('socket.io');
-const express = require('express');
-const app = express();
+var express = require('express');
+var socket = require('socket.io');
 
-// body-parser middleware for Express
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+// App setup
+var app = express();
+var server = app.listen(3000, function(){
+    console.log('listening for requests on port 3000..');
+});
 
-// http server object listening on port 3000
-var server = app.listen(3000, function() {
-    console.log('listening on port 3000');
-})
-
-/*
-Express requests handler methods
-*/
-
-// use '/view' as static files path (for html, css etc..)
-// serves index.html as default
+// Static files
 app.use(express.static('public'));
 
-// GET request
-//app.get('/', function(req, res){
-//    // serve index.html
-//    res.send
-//})
-
-// socket setup (pass http.server)
+// Socket setup & pass server
 var io = socket(server);
+io.on('connection', (socket) => {
 
-io.on('connection', function(socket) {
-    console.log('user connected');
-})
+    console.log('made socket connection', socket.id);
+
+    // Handle chat event
+    socket.on('chat message', function(data){
+        console.log(data);
+        io.sockets.emit('chat message', data);
+    });
+
+    // Handle typing event
+    socket.on('typing', function(data){
+        socket.broadcast.emit('typing', data);
+    });
+
+});
